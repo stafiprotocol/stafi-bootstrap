@@ -8,7 +8,10 @@ When you use [polkadotjs](https://polkadot.js.org/docs/api/) api to develop a St
 const api = await ApiPromise.create({
   provider: wsProvider,
   types: {
-    RefCount: 'u8'
+    RefCount: 'u32',
+    ChainId: 'u8',
+    ResourceId: '[u8; 32]',
+    DepositNonce: 'u64'
   }
 });
 ```
