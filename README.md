@@ -11,7 +11,8 @@ const api = await ApiPromise.create({
     RefCount: 'u32',
     ChainId: 'u8',
     ResourceId: '[u8; 32]',
-    DepositNonce: 'u64'
+    DepositNonce: 'u64',
+    BlockWeights:'u32'
   }
 });
 ```
