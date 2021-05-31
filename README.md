@@ -8,11 +8,18 @@ When you use [polkadotjs](https://polkadot.js.org/docs/api/) api to develop a St
 const api = await ApiPromise.create({
   provider: wsProvider,
   types: {
+    Address: 'IndicesLookupSource',
+    LookupSource: 'IndicesLookupSource',
     RefCount: 'u32',
     ChainId: 'u8',
     ResourceId: '[u8; 32]',
     DepositNonce: 'u64',
     RateType: 'u64',
+    AccountInfo: {
+      nonce: 'u32',
+      refcount: 'RefCount',
+      data: 'AccountData'
+    },
     AccountRData: {
       free: 'u128'
     },
