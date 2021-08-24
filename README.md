@@ -28,7 +28,10 @@ const api = await ApiPromise.create({
         'RFIS',
         'RDOT',
         'RKSM',
-        'RATOM'
+        'RATOM',
+        'RSOL',
+        'RMATIC',
+        'RBNB'
       ]
     },
     AccountXData: {
@@ -143,6 +146,44 @@ const api = await ApiPromise.create({
       votes_against: 'Vec<AccountId>',
       status: 'RproposalStatus',
       expiry: 'BlockNumber'
+    },
+    SwapTransactionInfo: {
+      account: 'AccountId',
+      receiver: 'Vec<u8>',
+      value: 'u128',
+      is_deal: 'bool'
+    },
+    SwapRate: {
+      lock_number: 'u64',
+      rate: 'u128'
+    },
+    BondAction: {
+      _enum: [
+        'BondOnly',
+        'UnbondOnly',
+        'BothBondUnbond',
+        'EitherBondUnbond'
+      ]
+    },
+    ClaimInfo: {
+      mint_amount: 'u128',
+      native_token_amount: 'u128',
+      total_reward: 'Balance',
+      total_claimed: 'Balance',
+      latest_claimed_block: 'BlockNumber',
+      mint_block: 'BlockNumber'
+    },
+    MintRewardAct: {
+      begin: 'BlockNumber',
+      end: 'BlockNumber',
+      cycle: 'u32',
+      reward_rate: 'u128',
+      total_reward: 'Balance',
+      left_amount: 'Balance',
+      user_limit: 'Balance',
+      locked_blocks: 'u32',
+      total_rtoken_amount: 'u128',
+      total_native_token_amount: 'u128'
     }
   }
 });
