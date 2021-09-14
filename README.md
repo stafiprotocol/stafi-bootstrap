@@ -162,8 +162,20 @@ const api = await ApiPromise.create({
         'BondOnly',
         'UnbondOnly',
         'BothBondUnbond',
-        'EitherBondUnbond'
+        'EitherBondUnbond',
+        'InterDeduct'
       ]
+    },
+    BondSwap: {
+      bonder: 'AccountId',
+      swap_fee: 'Balance',
+      swap_receiver: 'AccountId',
+      bridger: 'AccountId',
+      recipient: 'Vec<u8>',
+      dest_id: 'ChainId',
+      expire: 'BlockNumber',
+      bond_state: 'BondState',
+      refunded: 'bool'
     },
     ClaimInfo: {
       mint_amount: 'u128',
