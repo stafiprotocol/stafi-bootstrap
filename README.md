@@ -31,7 +31,8 @@ const api = await ApiPromise.create({
         'RATOM',
         'RSOL',
         'RMATIC',
-        'RBNB'
+        'RBNB',
+        'RETH'
       ]
     },
     AccountXData: {
@@ -196,6 +197,39 @@ const api = await ApiPromise.create({
       locked_blocks: 'u32',
       total_rtoken_amount: 'u128',
       total_native_token_amount: 'u128'
+    },
+    AccountLpData: {
+      free: 'u128'
+    },
+    SwapPool: {
+      symbol: 'RSymbol',
+      fis_balance: 'u128',
+      rtoken_balance: 'u128',
+      total_unit: 'u128'
+    },
+    StakePool: {
+      symbol: 'RSymbol',
+      emergency_switch: 'bool',
+      total_stake_lp: 'u128',
+      start_block: 'u32',
+      reward_per_block: 'u128',
+      total_reward: 'u128',
+      left_reward: 'u128',
+      lp_locked_blocks: 'u32',
+      last_reward_block: 'u32',
+      reward_per_share: 'u128',
+      guard_impermanent_loss: 'bool'
+    },
+    StakeUser: {
+      account: 'AccountId',
+      lp_amount: 'u128',
+      reward_debt: 'u128',
+      reserved_lp_reward: 'u128',
+      total_fis_value: 'u128',
+      total_rtoken_value: 'u128',
+      deposit_height: 'u32',
+      grade_index: 'u32',
+      claimed_reward: 'u128'
     }
   }
 });
