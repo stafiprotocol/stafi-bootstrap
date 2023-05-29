@@ -1,4 +1,4 @@
-# StaFi Seurity
+# StaFi Security
 
 > fork https://github.com/yearn/yearn-security and https://github.com/ObolNetwork/obol-security
 
